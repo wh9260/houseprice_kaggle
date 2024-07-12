@@ -35,6 +35,7 @@ norm_line$x <- seq()
 ggplot(df_numerical, aes(x = SalePrice)) +
     geom_histogram(aes(y = after_stat(density)), position = "identity", bins = 50, alpha = 0.5) +
     scale_x_continuous(labels = comma) +
+    scale_y_continuous(labels = comma) +
     geom_density(alpha = 0.6) +
     geom_vline(aes(xintercept = sale_price_norm_fit_mean), linetype = "dashed") +
     stat_function(fun = dnorm, args = list(mean = sale_price_norm_fit_mean, sd = sale_price_norm_fit_sd))
